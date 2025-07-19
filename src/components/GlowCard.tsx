@@ -1,0 +1,28 @@
+
+import { ReactNode } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+
+interface GlowCardProps {
+  children: ReactNode;
+  className?: string;
+  glowIntensity?: 'low' | 'medium' | 'high';
+}
+
+const GlowCard = ({ children, className = '', glowIntensity = 'medium' }: GlowCardProps) => {
+  const glowClasses = {
+    low: 'hover:shadow-card',
+    medium: 'hover:shadow-elegant',
+    high: 'hover:shadow-glow'
+  };
+
+  return (
+    <Card className={`glass-effect transition-all duration-500 hover:-translate-y-2 ${glowClasses[glowIntensity]} ${className}`}>
+      <CardContent className="relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary opacity-60"></div>
+        {children}
+      </CardContent>
+    </Card>
+  );
+};
+
+export default GlowCard;
