@@ -22,6 +22,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     emailjs.send(
+      console.log("Sending with:", {
+      service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      data: {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message
+      }
+    });
+
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       {
