@@ -26,12 +26,12 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* Main Title */}
-          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6">
+          <h3 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6">
             <span className="block text-foreground mb-2 animate-slide-up">Hello, I'm</span>
             <span className="block neon-text animate-glow-pulse">
-              Alex Johnson
+              Vedant Sapkale
             </span>
-          </h1>
+          </h3>
           
           {/* Subtitle with Typewriter Effect */}
           <div className="text-lg sm:text-xl lg:text-2xl text-primary mb-8 font-semibold">
@@ -49,12 +49,12 @@ const Hero = () => {
           {/* Stats Cards */}
           <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
             <GlowCard className="p-4 text-center">
-              <AnimatedCounter end={50} suffix="+" />
+              <AnimatedCounter end={5} suffix="+" />
               <p className="text-sm text-muted-foreground mt-1">Projects</p>
             </GlowCard>
             <GlowCard className="p-4 text-center">
-              <AnimatedCounter end={5} suffix="+" />
-              <p className="text-sm text-muted-foreground mt-1">Years</p>
+              <AnimatedCounter end={100} suffix="+" />
+              <p className="text-sm text-muted-foreground mt-1">Hours</p>
             </GlowCard>
             <GlowCard className="p-4 text-center">
               <AnimatedCounter end={100} suffix="%" />
@@ -85,9 +85,9 @@ const Hero = () => {
           {/* Enhanced Social Links */}
           <div className="flex justify-center space-x-8 mb-12">
             {[
-              { icon: Github, label: 'GitHub', href: '#' },
-              { icon: Linkedin, label: 'LinkedIn', href: '#' },
-              { icon: Mail, label: 'Email', href: '#' }
+              { icon: Github, label: 'GitHub', href: 'https://github.com/VedSap' },
+              { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/vedant-sapkale-45b275257/' },
+              { icon: Mail, label: 'Email', href: 'mailto:vedant.sapkale1404@gmail.com' }
             ].map((social, index) => (
               <a 
                 key={social.label}

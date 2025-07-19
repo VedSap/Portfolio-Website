@@ -23,8 +23,9 @@ const About = () => {
   ];
 
   const achievements = [
-    { icon: Trophy, number: 25, label: 'Awards Won', suffix: '+' },
-    { icon: Users, number: 150, label: 'Happy Clients', suffix: '+' },
+    { icon: Trophy, number: 3, label: 'Years of CR',suffix: ' ' },
+    { icon: Trophy, number: 1, label: 'Year of Tech Lead at CSI',suffix: ' ' },
+    /*{ icon: Users, number: 0, label: 'Happy Clients', suffix: '+' },*/
     { icon: Coffee, number: 1000, label: 'Cups of Coffee', suffix: '+' }
   ];
 
@@ -41,7 +42,7 @@ const About = () => {
             About <span className="neon-text">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer with 5+ years of experience building web applications. 
+            I'm a passionate developer building web applications. 
             I love turning complex problems into simple, beautiful solutions through code and design.
           </p>
         </div>
@@ -69,13 +70,15 @@ const About = () => {
             <h3 className="text-3xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">My Journey</h3>
             <div className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Started as a self-taught developer, I've worked with startups and established companies 
-                to build everything from simple landing pages to complex web applications. I believe in 
-                continuous learning and staying up-to-date with the latest technologies.
+                I'm a fresher in Computer Engineering with a passion for web development and design.
+                I specialize in creating responsive, user-friendly web applications using modern technologies.
+                I have a keen eye for detail and a love for crafting beautiful user interfaces.
+                I am interested in exploring new technologies and continuously improving my skills.
+                I love collaborating with others and sharing knowledge within the developer community.
+                Interested in AIML and Quantum Computing, I am always eager to learn and grow in these fields.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                When I'm not coding, you can find me exploring new design trends, contributing to 
-                open-source projects, or mentoring other developers in the community.
+                When I'm not coding, you can find me exploring new design trends or mentoring other developers in the community.
               </p>
             </div>
             
@@ -83,7 +86,7 @@ const About = () => {
             <div className="space-y-4 pt-6">
               {[
                 { skill: 'Frontend Development', percentage: 95 },
-                { skill: 'UI/UX Design', percentage: 88 },
+                { skill: 'AIML', percentage: 88 },
                 { skill: 'Backend Development', percentage: 85 }
               ].map((item, index) => (
                 <div key={item.skill} className="space-y-2">

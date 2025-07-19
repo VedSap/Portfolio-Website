@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,17 +19,30 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    ).then(() => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitting(false);
+    }).catch(() => {
+      toast({
+        title: "Oops! Something went wrong.",
+        description: "Please try again later.",
+      });
+      setIsSubmitting(false);
     });
-    
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,19 +56,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'alex@example.com',
-      href: 'mailto:alex@example.com'
+      value: 'vedant.sapkale1404@gmail.com',
+      href: 'mailto:vedant.sapkale1404@gmail.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+91 935 6944 594',
+      href: 'tel:+919356944594'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Pimpri-Pune, Maharashtra, India',
       href: '#'
     }
   ];
@@ -79,39 +93,33 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="h-12"
-                  />
-                </div>
-                <div>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="h-12"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                  />
-                </div>
-                <Button 
-                  type="submit" 
+                <Input
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="h-12"
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="h-12"
+                />
+                <Textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                />
+                <Button
+                  type="submit"
                   className="w-full bg-primary hover:bg-primary/90 shadow-elegant hover:shadow-glow transition-all duration-300"
                   disabled={isSubmitting}
                 >
@@ -132,14 +140,14 @@ const Contact = () => {
           <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
             <div className="space-y-6">
-              {contactInfo.map((info, index) => (
+              {contactInfo.map((info) => (
                 <div key={info.title} className="flex items-center space-x-4">
                   <div className="bg-gradient-primary p-3 rounded-lg">
                     <info.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold">{info.title}</h4>
-                    <a 
+                    <a
                       href={info.href}
                       className="text-muted-foreground hover:text-primary transition-colors duration-200"
                     >
@@ -153,8 +161,8 @@ const Contact = () => {
             <div className="mt-12 p-6 bg-gradient-hero rounded-lg">
               <h4 className="font-semibold mb-2">Let's Work Together</h4>
               <p className="text-muted-foreground">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you need a full-stack developer or just want to chat about tech, 
+                I'm always interested in new opportunities and exciting projects.
+                Whether you need a full-stack developer or just want to chat about tech,
                 feel free to reach out!
               </p>
             </div>

@@ -8,39 +8,33 @@ const Skills = () => {
     {
       title: 'Frontend',
       icon: Code,
-      skills: ['React', 'TypeScript', 'Next.js', 'Vue.js', 'TailwindCSS', 'Styled Components'],
+      skills: ['React', 'TypeScript', 'HTML', 'CSS', 'TailwindCSS', 'Styled Components'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Backend',
       icon: Database,
-      skills: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'Redis', 'GraphQL'],
+      skills: ['Java', 'Python', 'SQL', 'MongoDB', 'Redis', 'GraphQL'],
       color: 'from-green-500 to-emerald-500'
     },
     {
       title: 'Design',
       icon: Palette,
-      skills: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'Sketch', 'Framer'],
+      skills: ['Figma', 'Photoshop', 'Illustrator', 'Blender'],
       color: 'from-purple-500 to-pink-500'
     },
     {
       title: 'DevOps',
       icon: Zap,
-      skills: ['Docker', 'AWS', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'Terraform'],
+      skills: ['Docker', 'AWS', 'GitHub Actions'],
       color: 'from-orange-500 to-red-500'
     },
     {
       title: 'Web Technologies',
       icon: Globe,
-      skills: ['REST APIs', 'WebSockets', 'PWA', 'WebRTC', 'OAuth', 'JWT'],
+      skills: ['REST APIs', 'WebSockets'],
       color: 'from-indigo-500 to-blue-500'
     },
-    {
-      title: 'Mobile',
-      icon: Smartphone,
-      skills: ['React Native', 'Flutter', 'Ionic', 'Expo', 'Swift', 'Kotlin'],
-      color: 'from-teal-500 to-green-500'
-    }
   ];
 
   return (

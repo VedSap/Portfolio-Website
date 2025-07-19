@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 const MatrixBackground = () => {
@@ -25,7 +24,11 @@ const MatrixBackground = () => {
       });
     };
 
-    const interval = setInterval(createChar, 100);
+    const interval = setInterval(() => {
+      if (container.children.length < 20) {
+        createChar();
+      }
+    }, 500);
     return () => {
       clearInterval(interval);
       container.innerHTML = '';

@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:alex@example.com', label: 'Email' }
+    { icon: Github, href: 'https://github.com/VedSap', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/vedant-sapkale-45b275257/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:vedant.sapkale1404@gmail.com', label: 'Email' }
   ];
 
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="font-bold text-2xl bg-gradient-primary bg-clip-text text-transparent mb-2">
-              Alex Johnson
+              Vedant Sapkale
             </div>
             <p className="text-muted-foreground">
               Full-Stack Developer & UI/UX Designer
@@ -40,7 +40,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-muted-foreground flex items-center justify-center md:justify-end">
-              © {currentYear} Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by Alex Johnson
+              © {currentYear} Made by Vedant Sapkale with lots of ☕
             </p>
           </div>
         </div>
