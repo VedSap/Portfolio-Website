@@ -18,44 +18,48 @@ const Contact = () => {
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    emailjs.send(
-      console.log("Sending with:", {
-      service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      data: {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message
-      }
-    });
+  // ✅ Log the values before calling emailjs.send()
+  console.log("Sending with:", {
+    service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    data: {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message
+    }
+  });
 
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    ).then(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }).catch(() => {
-      toast({
-        title: "Oops! Something went wrong.",
-        description: "Please try again later.",
-      });
-      setIsSubmitting(false);
+  emailjs.send(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    },
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  )
+  .then(() => {
+    toast({
+      title: "Message sent!",
+      description: "Thank you for reaching out. I'll get back to you soon.",
     });
-  };
+    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(false);
+  })
+  .catch(() => {
+    toast({
+      title: "Oops! Something went wrong.",
+      description: "Please try again later.",
+    });
+    setIsSubmitting(false);
+  });
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
