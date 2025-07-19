@@ -31,7 +31,7 @@ const Hero = () => {
 {/*             <span className="block neon-text animate-glow-pulse">
               Vedant Sapkale
             </span> */}
-            <span className="block text-6xl font-bold text-white drop-shadow-[0_0_10px_#00f]">
+            <span className="block text-6xl font-bold text-white drop-shadow-[0_0_10px_#0ff]">
             Vedant Sapkale
             </span>
 
