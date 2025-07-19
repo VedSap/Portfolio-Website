@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6">
             <span className="block text-foreground mb-2 animate-slide-up">Hello, I'm</span>
             <span className="block neon-text animate-glow-pulse">
               Alex Johnson
@@ -34,7 +34,7 @@ const Hero = () => {
           </h1>
           
           {/* Subtitle with Typewriter Effect */}
-          <div className="text-xl sm:text-2xl lg:text-4xl text-primary mb-8 font-semibold">
+          <div className="text-lg sm:text-xl lg:text-2xl text-primary mb-8 font-semibold">
             <span className="animate-pulse">Full-Stack Developer</span>
             <span className="mx-4 text-accent animate-bounce">•</span>
             <span className="animate-pulse" style={{ animationDelay: '0.5s' }}>UI/UX Designer</span>

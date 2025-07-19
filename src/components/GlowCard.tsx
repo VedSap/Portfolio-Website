@@ -19,7 +19,6 @@ const GlowCard = ({ children, className = '', glowIntensity = 'medium', style }:
   return (
     <Card className={`glass-effect transition-all duration-500 hover:-translate-y-2 ${glowClasses[glowIntensity]} ${className}`} style={style}>
       <CardContent className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary opacity-60"></div>
         {children}
       </CardContent>
     </Card>
