@@ -28,9 +28,13 @@ const Hero = () => {
           {/* Main Title */}
           <h3 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6">
             <span className="block text-foreground mb-2 animate-slide-up">Hello, I'm</span>
-            <span className="block neon-text animate-glow-pulse">
+{/*             <span className="block neon-text animate-glow-pulse">
               Vedant Sapkale
+            </span> */}
+            <span className="block text-6xl font-bold text-white drop-shadow-[0_0_10px_#00f]">
+            Vedant Sapkale
             </span>
+
           </h3>
           
           {/* Subtitle with Typewriter Effect */}
