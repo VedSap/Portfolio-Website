@@ -16,22 +16,23 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-
+  
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
 
-  // ✅ Log the values before calling emailjs.send()
-  console.log("Sending with:", {
-    service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-    data: {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message
-    }
-  });
+  if (import.meta.env.DEV) {
+    console.log("Sending with:", {
+      service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      data: {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message
+      }
+    });
+   }
 
   emailjs.send(
     import.meta.env.VITE_EMAILJS_SERVICE_ID,
